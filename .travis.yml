@@ -4,6 +4,7 @@ python:
     - "2.7"
     - "3.7"
 before_install:
+    sudo apt-get update
     sudo apt-get install -y libgraphicsmagick++1-dev libboost-python1.40-dev
 install: pip install tox-travis
 script: tox
