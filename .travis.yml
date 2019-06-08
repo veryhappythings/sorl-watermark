@@ -1,10 +1,14 @@
 dist: xenial
 language: python
 python:
-    - "2.7"
-    - "3.7"
-before_install:
-    - sudo apt-get update
-    - sudo apt-get install -y libgraphicsmagick++1-dev libboost-python-dev
+  - "2.7"
+  - "3.7"
+addons:
+  apt:
+    packages:
+      - libboost-python-dev
+      - libgraphicsmagick++1-dev
+      - python3-setuptools
+      - gsfonts
 install: pip install tox-travis
 script: tox
